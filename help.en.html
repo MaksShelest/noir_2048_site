@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121212">
+<meta name="description" content="Detailed Noir 2048 help: game rules, boosts, currencies, rewards, games and saving progress.">
+<meta property="og:title" content="Noir 2048 Help — SKRAY">
+<meta property="og:description" content="Detailed Noir 2048 help: game rules, boosts, currencies, rewards, games and saving progress.">
+<meta property="og:type" content="article">
+<title>Noir 2048 Help — SKRAY</title>
+<link rel="icon" href="./assets/logo-v2.png">
+<link rel="stylesheet" href="./styles.css">
+<link rel="alternate" hreflang="ru" href="./help.html">
+<link rel="alternate" hreflang="en" href="./help.en.html">
+<script src="./help.js" defer></script>
+</head>
+<body data-page="help">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header help-header wrap">
+<a class="brand" href="./en.html"><img src="./assets/logo-v2.png" alt="" width="38" height="38"><span>Noir 2048</span></a>
+<div class="lang-switch" role="group" aria-label="Язык / Language"><a href="./help.html" data-help-language="ru" lang="ru" hreflang="ru" aria-current="false">RU</a><a href="./help.en.html" data-help-language="en" lang="en" hreflang="en" aria-current="true">EN</a></div>
+</header>
+<main id="content" class="help-main wrap">
+<a class="text-link help-home" href="./en.html">Home</a>
+<div class="help-heading"><p class="eyebrow">NOIR 2048 · SKRAY</p><h1>Noir 2048 Help</h1><p class="muted">Game rules and features</p></div>
+<details class="help-toc"><summary>Contents<span>22 sections</span></summary><nav aria-label="Contents"><ol><li><a href="#field">Board and goal</a></li>
+<li><a href="#moves">Moving tiles</a></li>
+<li><a href="#merges">Merging numbers</a></li>
+<li><a href="#new-tiles">New tiles</a></li>
+<li><a href="#score">Score and best score</a></li>
+<li><a href="#no-moves">When no moves remain</a></li>
+<li><a href="#restart">Restarting and clearing a game</a></li>
+<li><a href="#boosts">Boosts</a></li>
+<li><a href="#currency">Coins and crystals</a></li>
+<li><a href="#coin-rewards">Calculating coins for a game</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#daily-rewards">Daily rewards</a></li>
+<li><a href="#letters">Letters and gifts</a></li>
+<li><a href="#brain-blitz">The Brain Blitz offer</a></li>
+<li><a href="#games">Multiple games</a></li>
+<li><a href="#styles">Tile styles</a></li>
+<li><a href="#saves">Saving progress</a></li>
+<li><a href="#offline">Offline play and ads</a></li>
+<li><a href="#sound">Sound, music and vibration</a></li>
+<li><a href="#notifications">Notifications</a></li>
+<li><a href="#updates">Updates</a></li>
+<li><a href="#documents">Documents and data</a></li></ol></nav></details>
+<article class="help-article" aria-label="Noir 2048 Help">
+<section class="help-section" aria-labelledby="field"><h2 id="field">Board and goal</h2>
+<p>The board has 16 fixed cells: four rows and four columns. Each cell can hold one tile. A new game starts with two tiles, both with a value of 2.</p>
+<p>Merge matching numbers, build larger tiles and increase your score. Reaching 2048 is the main milestone, but it does not end the game. You can keep playing and build even larger numbers.</p>
+</section>
+<section class="help-section" aria-labelledby="moves"><h2 id="moves">Moving tiles</h2>
+<p>Swipe up, down, left or right on the board. All tiles move in that direction as far as the edge and other tiles allow. The board stays in place; only the tiles move.</p>
+<p>A swipe acts on the entire board. A regular move cannot select and move just one tile.</p>
+<p>If no tile moves or merges, the move does not count: the board and score stay the same and no new tile appears.</p>
+</section>
+<section class="help-section" aria-labelledby="merges"><h2 id="merges">Merging numbers</h2>
+<p>When moving along a row or column, matching tiles with no obstacle between them merge into one. Its value is the sum of the original numbers: 2 + 2 = 4, 4 + 4 = 8, 8 + 8 = 16.</p>
+<p>Different numbers do not merge. For example, tiles 2 and 4 remain separate.</p>
+<p>Each tile can take part in only one merge per move. A tile created by a merge cannot merge again during that same move.</p>
+<p>Examples of a swipe to the left:</p>
+<ul>
+<li>A row of 2, 2, 2, 2 becomes 4, 4 and two empty cells. It will not produce an 8 in this move.</li>
+<li>A row of 2, 2, 4 and an empty cell becomes 4, 4 and two empty cells.</li>
+<li>A row of 2, 4, 2 and an empty cell produces no merge: the 4 separates the two 2s.</li>
+</ul>
+<p>These examples show the result before the new tile appears.</p>
+</section>
+<section class="help-section" aria-labelledby="new-tiles"><h2 id="new-tiles">New tiles</h2>
+<p>After each successful move, one new tile appears in an empty cell. A move is successful if it moves or merges at least one tile.</p>
+<p>Probabilities for the new tile&#x27;s value:</p>
+<div class="help-table"><table><thead><tr><th scope="col">Value</th><th scope="col">Probability</th></tr></thead><tbody>
+<tr><td>2</td><td>90%</td></tr>
+<tr><td>4</td><td>10%</td></tr>
+</tbody></table></div>
+<p>Larger numbers are made by merging tiles during regular play.</p>
+<p>The position is chosen randomly from the empty cells. A new tile never replaces an occupied cell.</p>
+<p>The probability applies independently to each new tile. It is not a schedule: 10% does not mean that every tenth tile must be a 4. Several 4s may appear in a row, or you may see only 2s for a long time.</p>
+<p>After undoing and repeating the same move, the game tries to repeat the previous new tile&#x27;s position and value. See the section on undoing a move for details.</p>
+</section>
+<section class="help-section" aria-labelledby="score"><h2 id="score">Score and best score</h2>
+<p>Each merge adds the new tile&#x27;s value to your score. Two 2s produce a 4 and add 4 points; two 4s produce an 8 and add 8 points. If several merges happen in one move, their points are added together.</p>
+<p>Sliding without merging earns no points, but still counts as a successful move if the board changes. A new tile appears after it too.</p>
+<p>The score belongs to the current game. The best score is shared across all games and increases when you beat your previous result. Overall progress rewards use points from all games, including the current one.</p>
+</section>
+<section class="help-section" aria-labelledby="no-moves"><h2 id="no-moves">When no moves remain</h2>
+<p>A deadlock occurs when the board is full and no direction allows any tile to move or merge. A full board alone is not a deadlock: matching neighbours may still merge.</p>
+<p>At a deadlock, the game is saved, the board stays visible and a “No moves left” message appears. The game has not ended yet, and its final reward has not been given.</p>
+<p>You can use an available undo or tile removal. If a move becomes possible again, play continues. Alternatively, tap “Finish game” to end the game and receive its final reward.</p>
+</section>
+<section class="help-section" aria-labelledby="restart"><h2 id="restart">Restarting and clearing a game</h2>
+<p>“New game” offers to finish the current game early. After you confirm, its board and score are reset. The reward is 30% of the usual calculation for your score, rounded down to whole coins.</p>
+<p>Clearing a game in “My games” deletes that game&#x27;s saved state. It is a separate action and does not promise a reward for finishing.</p>
+<p>Both actions keep your shared balance, boosts, purchased styles, unlocked slots and overall progress. Undo cannot restore a deleted board.</p>
+</section>
+<section class="help-section" aria-labelledby="boosts"><h2 id="boosts">Boosts</h2>
+<p>Tap the lightning button next to the score to open the boost menu. You can buy boosts with coins in the shop&#x27;s “Boosts” tab. Their price and the number you have are shown in the interface.</p>
+<p>Boosts are consumable items: one successful use spends one item. Opening or closing the menu, or cancelling tile selection, spends nothing.</p>
+<h3 id="undo">Undo a move</h3>
+<p>Restores the board and score to the state before the last successful move, including removing the tile that appeared after it.</p>
+<p>Only the most recent move is available: you cannot undo several previous moves in a row. If there has been no successful move, or the last one has already been undone, this boost is unavailable. An unsuccessful swipe does not replace the move saved for undo.</p>
+<p>Undo history is stored separately for each game and survives changing slots and restarting the app. Starting a new game, clearing a game or confirming its end erases this history.</p>
+<p>Rewards already given are not taken back. Repeating an undone move does not give the same reward or count the same progress again.</p>
+<p>If you repeat the same move after undoing, the game tries to repeat the new tile&#x27;s position and value. If you make a different successful move, tile generation becomes random again. A swipe that does not change the board does not reset this rule.</p>
+<h3 id="delete">Remove a tile</h3>
+<p>Activate the boost and tap the tile you want to remove. While tile selection is active, swipes do not move the board. “Cancel” closes selection without spending an item.</p>
+<p>An empty cell cannot be removed and does not spend an item. You cannot remove the last tile left on the board.</p>
+<p>Removal earns no points and does not create a new tile. A successful removal spends one item, saves the game and clears undo history. Undo cannot restore the removed tile.</p>
+<h3 id="boost-unavailable">When a boost is unavailable</h3>
+<p>You need the relevant item in stock and a suitable game state. For example, undo requires a previous successful move, while removal requires more than one tile.</p>
+<p>Wait for the tiles to finish moving and close any obstructing window. Once a game has been finally ended, a boost cannot restore its board.</p>
+</section>
+<section class="help-section" aria-labelledby="currency"><h2 id="currency">Coins and crystals</h2>
+<p>You can earn coins from finished games, achievements within a game, daily rewards, gifts in letters and available offers. Coins pay for boosts, some styles and extra game slots.</p>
+<p>You can earn crystals from lifetime score achievements, daily rewards and certain letters. They pay for styles whose price is listed in crystals.</p>
+<p>Coins and crystals are different currencies. There is no direct exchange between them. A purchase spends only the currency shown for that item.</p>
+</section>
+<section class="help-section" aria-labelledby="coin-rewards"><h2 id="coin-rewards">Calculating coins for a game</h2>
+<p>The final reward depends on your score. A higher score means more coins, but the increase is not linear: each additional coin requires more points.</p>
+<p>The usual reward formula is <strong>200 × ln(1 + score / 20 000)</strong>, where ln is the natural logarithm. The result is rounded down to a whole number of coins.</p>
+<p>Examples without an ad multiplier:</p>
+<div class="help-table"><table><thead><tr><th scope="col">Score</th><th scope="col">Coins</th></tr></thead><tbody>
+<tr><td>101</td><td>1</td></tr>
+<tr><td>740</td><td>7</td></tr>
+<tr><td>10 000</td><td>81</td></tr>
+<tr><td>100 000</td><td>358</td></tr>
+</tbody></table></div>
+<p>An early restart takes 30% of the formula&#x27;s result, then rounds down. These coins are given for finishing the game, not for each regular move. Separate achievement rewards may arrive during play.</p>
+<p>When the usual reward for a finished game is at least 5 coins, you can choose to watch an ad and receive twice as much. A reward already received is not given again.</p>
+</section>
+<section class="help-section" aria-labelledby="achievements"><h2 id="achievements">Achievements</h2>
+<p>Open “Rewards” in your profile to see achievement requirements, progress and rewards already received.</p>
+<p>“In game” achievements reward you for the first tile of a certain value within that game. Rewards start at 128: it gives 1 coin, 256 gives 2, and 512 gives 3. Each next doubling milestone gives one more coin, up to and including a tile of 131 072.</p>
+<p>Each milestone is rewarded once per game. You can earn these achievements again in a new game.</p>
+<p>“Lifetime” achievements depend on the total score from all games. Each gives crystals once per profile.</p>
+<div class="help-table"><table><thead><tr><th scope="col">Total score</th><th scope="col">Crystals</th></tr></thead><tbody>
+<tr><td>1 000</td><td>1</td></tr>
+<tr><td>10 000</td><td>2</td></tr>
+<tr><td>100 000</td><td>3</td></tr>
+<tr><td>300 000</td><td>4</td></tr>
+<tr><td>700 000</td><td>5</td></tr>
+<tr><td>1 000 000</td><td>6</td></tr>
+<tr><td>3 000 000</td><td>7</td></tr>
+<tr><td>7 000 000</td><td>8</td></tr>
+<tr><td>10 000 000</td><td>9</td></tr>
+<tr><td>30 000 000</td><td>10</td></tr>
+<tr><td>70 000 000</td><td>11</td></tr>
+<tr><td>100 000 000</td><td>12</td></tr>
+<tr><td>1 000 000 000</td><td>1</td></tr>
+</tbody></table></div>
+<p>Changing games, restarting the app or undoing a move cannot reward a lifetime achievement you have already received.</p>
+</section>
+<section class="help-section" aria-labelledby="daily-rewards"><h2 id="daily-rewards">Daily rewards</h2>
+<p>The cycle has three rewards:</p>
+<ol>
+<li>30 coins.</li>
+<li>70 coins.</li>
+<li>1 crystal.</li>
+</ol>
+<p>After the third reward, the cycle starts again. You can receive one base reward per calendar day.</p>
+<p>The cycle advances only after you collect a reward. Missing days does not reset it: if you collect the first reward and return several days later, the second will still be next.</p>
+<p>You can collect the usual reward or choose to watch an ad to double it. If the ad does not load or the view is not confirmed, no extra reward is given. An unsuccessful ad attempt does not itself use up your right to a base reward you have not yet collected.</p>
+<p>The card labels show your place in the cycle: “Collected”, “Today”, “Tomorrow” and “Later”. A reward does not expire because you miss a day.</p>
+<p>The calendar uses the device&#x27;s local date. Turning the clock back does not let you collect the same reward again. Changing the date may temporarily affect calendar rewards; use the correct date and time.</p>
+</section>
+<section class="help-section" aria-labelledby="letters"><h2 id="letters">Letters and gifts</h2>
+<p>Letters are in the “Letters” section of your profile. A red dot indicates an unread letter. Letters do not open automatically over your game.</p>
+<p>Delivery depends on playing days on which you make at least one successful move. Simply opening the app is not enough. Several moves or changing games on the same day do not add extra days. You do not have to play on consecutive days.</p>
+<p>Gifts:</p>
+<ul>
+<li>On your third playing day: 70 coins and 1 crystal.</li>
+<li>On your fourteenth playing day: 130 coins and 2 crystals.</li>
+</ul>
+<p>Opening a letter and collecting its gift are separate actions. Closing it without collecting does not remove the gift. You can collect a letter&#x27;s reward only once.</p>
+<p>Each letter keeps its own first delivery date. Reading it, collecting the gift or restarting does not change that date. Older letters with no saved date may show “Received earlier”.</p>
+<p>Turning the date back may prevent new playing days from being counted until the calendar passes the last recorded date. This does not delete letters or gifts you have already received.</p>
+</section>
+<section class="help-section" aria-labelledby="brain-blitz"><h2 id="brain-blitz">The Brain Blitz offer</h2>
+<p>In the shop&#x27;s “Offers” tab, you can receive 100 coins for opening Brain Blitz&#x27;s RuStore page.</p>
+<p>Tap “Open and collect”. If the system successfully accepts the link for opening, the bonus is awarded once per local profile. Installing or launching Brain Blitz is not required. Opening and loading the page are not checked separately.</p>
+<p>After collection, the card shows “Bonus collected”. “Open Brain Blitz” remains available, but further visits do not give coins.</p>
+<p>If the system reports that it could not open the link, no bonus is given and you can try again.</p>
+</section>
+<section class="help-section" aria-labelledby="games"><h2 id="games">Multiple games</h2>
+<p>“My games” lets you keep up to four independent games. The first slot is available immediately. The others unlock in order for coins and remain available in this profile after purchase. The price is shown before you unlock a slot.</p>
+<p>Each game has its own board, score, name, selected style, in-game achievements and last-move undo history.</p>
+<p>Your coin and crystal balance, boost stock, purchased styles, unlocked slots, overall best score, lifetime achievements, letters and settings are shared across all games.</p>
+<p>Changing slots restores the selected game&#x27;s state. You do not need to buy the same styles separately for each slot.</p>
+<p>A game&#x27;s additional menu lets you rename it or clear its saved state. Clearing a game does not close a slot you have already purchased.</p>
+</section>
+<section class="help-section" aria-labelledby="styles"><h2 id="styles">Tile styles</h2>
+<p>Styles change the look of tiles. They do not change merge rules, tile generation probabilities or scoring.</p>
+<p>Open the shop&#x27;s “Styles” tab. Each style shows its price and currency. Buying a style adds it to your collection but does not switch your appearance by itself.</p>
+<p>After buying, tap “Select”. Selecting an available style is free and applies to the current game. When you return to another slot, it restores that game&#x27;s selected style.</p>
+<p>Changing styles does not reset the board or score. You can change the appearance of a game already in progress.</p>
+</section>
+<section class="help-section" aria-labelledby="saves"><h2 id="saves">Saving progress</h2>
+<p>Games and your profile are saved automatically on the device. There is no separate save button. At the next launch, the app restores the active saved game.</p>
+<p>The game has no cloud sync of its own or built-in way to transfer progress between devices. Uninstalling the app, clearing its data, changing devices or damage to a save file may cause lost progress. Automatic recovery by the game is not guaranteed in these cases.</p>
+<p>Clearing one game inside the app is different from clearing app data in your phone&#x27;s settings: the first deletes the selected board; the second may delete the entire local profile, including currency and purchases made with in-game currency.</p>
+<p>One-time rewards belong to the local profile. Restarting the app or changing games does not renew them.</p>
+</section>
+<section class="help-section" aria-labelledby="offline"><h2 id="offline">Offline play and ads</h2>
+<p>The core game, saved games, settings and purchases using currency you already have are available offline.</p>
+<p>External features need a connection: loading ads, checking for and downloading updates through RuStore, and opening the website or other games&#x27; pages.</p>
+<p>Ads run when you choose to increase an offered reward. There are no compulsory ad breaks between moves. You can play and receive base rewards without watching ads.</p>
+<p>An extra ad reward is given only after the view is confirmed. If the video is unavailable, closed before the end or the service returns an error, no multiplier is applied. Repeated confirmation of one view does not give the reward again.</p>
+</section>
+<section class="help-section" aria-labelledby="sound"><h2 id="sound">Sound, music and vibration</h2>
+<p>Settings let you turn sound effects and music off separately and adjust music volume. Disabling effects does not disable music, and vice versa.</p>
+<p>Vibration helps you notice a merge, an impossible move, a purchase or an achievement. You can disable it with the main vibration switch. Feedback depends on the device&#x27;s capabilities and system settings.</p>
+</section>
+<section class="help-section" aria-labelledby="notifications"><h2 id="notifications">Notifications</h2>
+<p>Notifications are off by default for a new profile. You can turn them on or off in settings.</p>
+<p>If notifications are enabled and allowed by the system, the game may remind you about an available daily reward. The reminder is scheduled for 20:00 local time; exact delivery depends on Android and device restrictions.</p>
+<p>Collecting a reward cancels its reminder. Tapping a notification opens the game; the notification itself does not grant coins or crystals.</p>
+<p>Disabling notifications does not affect progress or your right to collect a reward. Denying system permission does not prevent play either.</p>
+</section>
+<section class="help-section" aria-labelledby="updates"><h2 id="updates">Updates</h2>
+<p>If an update is available through RuStore, the game may offer to download it. You decide and can postpone the offer.</p>
+<p>After downloading, installation is offered separately. Installing an update may restart the app.</p>
+<p>Checking and downloading require an internet connection and an available RuStore service. No connection or a failed check does not prevent core play.</p>
+</section>
+<section class="help-section" aria-labelledby="documents"><h2 id="documents">Documents and data</h2>
+<p>The <a href="./terms.en.html">Terms of Use</a> and <a href="./privacy.en.html">Privacy Policy</a> are available through buttons on the “Game rules” screen.</p>
+<p>Game progress is stored locally. Ads and updates use third-party services that may process device data. The documents contain the current information on data processing and terms of use.</p>
+</section>
+</article>
+</main>
+<footer class="footer wrap">
+<div><div class="footer-brand">SKRAY</div><p>Games for curious minds</p><p class="footer-note">© 2026 SKRAY</p></div>
+<div class="footer-right"><a href="mailto:2048noir@gmail.com">2048noir@gmail.com</a><a class="footer-help" href="./help.en.html">Noir 2048 Help</a><div class="footer-legal"><a href="./terms.en.html">Terms of Use</a><a href="./privacy.en.html">Privacy Policy</a></div></div>
+</footer>
+</body>
+</html>
